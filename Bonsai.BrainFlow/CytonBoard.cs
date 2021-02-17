@@ -3,10 +3,10 @@ using System.ComponentModel;
 
 namespace Bonsai.BrainFlow
 {
-    [Description("Captures EEG signals from the OpenBCI 8-channel Cyton Biosensing Board.")]
-    public class CytonCapture : BrainFlowCapture
+    [Description("Captures biosignals from the OpenBCI 8-channel Cyton Board.")]
+    public class CytonBoard : BrainFlowBoard
     {
-        [TypeConverter("Bonsai.IO.PortNameConverter, Bonsai.System")]
+        [TypeConverter(typeof(PortNameConverter))]
         [Description("The name of the serial port assigned to the Cyton board.")]
         public string PortName { get; set; }
 

@@ -10,12 +10,12 @@ namespace Bonsai.BrainFlow
 {
     [Combinator(MethodName = nameof(Generate))]
     [WorkflowElementCategory(ElementCategory.Source)]
-    public abstract class BrainFlowCapture
+    public abstract class BrainFlowBoard
     {
         readonly IObservable<Mat> source;
         readonly object captureLock = new object();
 
-        public BrainFlowCapture()
+        public BrainFlowBoard()
         {
             source = Observable.Create<Mat>((observer, cancellationToken) =>
             {
